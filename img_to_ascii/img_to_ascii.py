@@ -1,5 +1,5 @@
-from imageTranslator import AsciiGrayscaleTranslator
-from imageHandler import AsciiGrayscaleImageHandler
+from .imageHandler import AsciiGrayscaleImageHandler
+from .imageTranslator import AsciiGrayscaleTranslator
 
 
 def main() -> None:

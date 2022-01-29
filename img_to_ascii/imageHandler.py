@@ -1,8 +1,9 @@
 from abc import ABC
+
 import cv2
-import numpy as np
-from imageTranslator import ImageTranslator
 import numpy.typing as npt
+
+from .imageTranslator import ImageTranslator
 
 
 class ImageHandler(ABC):

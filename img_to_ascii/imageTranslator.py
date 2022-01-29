@@ -1,5 +1,6 @@
-from abc import ABC
 import math
+from abc import ABC
+
 import numpy as np
 import numpy.typing as npt
 
@@ -13,7 +14,10 @@ class ImageTranslator(ABC):
 
 
 class AsciiGrayscaleTranslator(ImageTranslator):
-    """translator of np array image values to ascii characters"""
+    """
+    translator of np array image values to ascii characters
+    translation_table: str - string containing characters for translation, ordered from left (black) to right (white)
+    """
 
     def __init__(self, translation_table: str) -> None:
         super().__init__()

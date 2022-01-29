@@ -1,5 +1,5 @@
 import pytest
-from imageTranslator import AsciiGrayscaleTranslator
+from img_to_ascii.imageTranslator import AsciiGrayscaleTranslator
 
 
 @pytest.mark.parametrize(
