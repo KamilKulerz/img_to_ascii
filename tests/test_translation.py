@@ -30,3 +30,17 @@ from img_to_ascii.imageTranslator import AsciiGrayscaleTranslator
 def test_translation(in1, out1):
     agt = AsciiGrayscaleTranslator(" .:-=+*#%@")
     assert agt._single_translation(in1) == out1
+
+
+@pytest.mark.parametrize(
+    "in1, out1",
+    [
+        (0, "."),
+        (127, "."),
+        (128, "@"),
+        (255, "@"),
+    ],
+)
+def test_translation2(in1, out1):
+    agt = AsciiGrayscaleTranslator(".@")
+    assert agt._single_translation(in1) == out1
