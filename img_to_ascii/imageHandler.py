@@ -36,11 +36,15 @@ class AsciiGrayscaleImageHandler(ImageHandler):
         """returns image"""
         return self.img
 
-    def save_to_file(self, out_filpath: str, vertical_spacing: int) -> None:
-        """saves image to .txt file with indicated vertical_spacing, spacing skips lines"""
+    def save_to_file(self, out_filepath: str, vertical_spacing: int) -> None:
+        """
+        saves image to .txt file with indicated vertical_spacing, spacing skips lines
+        out_filepath: str - path to file for save
+        vartical_spacing: int - number after which line will be skipped periodically (must be > 1)
+        """
         if vertical_spacing < 2:
             raise ValueError("Spacing must be greater than 1")
-        with open(out_filpath, "w", encoding="utf-8") as f:
+        with open(out_filepath, "w", encoding="utf-8") as f:
             for i, row in enumerate(self.img):
                 if i % vertical_spacing != 0:
                     f.write("".join(row) + "\n")
