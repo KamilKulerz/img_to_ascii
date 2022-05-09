@@ -1,5 +1,5 @@
-from .imageHandler import AsciiGrayscaleImageHandler
-from .imageTranslator import AsciiGrayscaleTranslator
+from img_to_ascii_module.imageHandler import AsciiGrayscaleImageHandler
+from img_to_ascii_module.imageTranslator import AsciiGrayscaleTranslator
 
 
 def main() -> None:
@@ -15,7 +15,7 @@ def main() -> None:
 
     agh = AsciiGrayscaleImageHandler(agt, INPUT_FILE_PATH)
 
-    agh.save_to_file("output/out1.txt", vertical_spacing=3)
+    agh.save_to_file("output/out1.txt", vertical_spacing=2)
 
 
 if __name__ == "__main__":
