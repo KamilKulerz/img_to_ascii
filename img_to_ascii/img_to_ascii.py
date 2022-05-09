@@ -3,16 +3,19 @@ from .imageTranslator import AsciiGrayscaleTranslator
 
 
 def main() -> None:
-    agt = AsciiGrayscaleTranslator(" :=*%")
+    TRANSLATION_TABLE = " :=*%"
+    # TRANSLATION_TABLE = " .:-=+*#%@"
+    # TRANSLATION_TABLE = " ░▒▓"
+    # TRANSLATION_TABLE = """ .\'`^",:;Il!i><~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"""
+    # TRANSLATION_TABLE = """ .\'`^~+_-?][}{1)(rxnuvczQ0OZmwqo*#M%B@$"""
 
-    # agt = AsciiGrayscaleTranslator(" .:-=+*#%@")
-    # agt = AsciiGrayscaleTranslator(" ░▒▓")
-    # agt = AsciiGrayscaleTranslator(""" .\'`^",:;Il!i><~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$""")
-    # agt = AsciiGrayscaleTranslator(""" .\'`^~+_-?][}{1)(rxnuvczQ0OZmwqo*#M%B@$""")
+    INPUT_FILE_PATH = "input/lena1.png"
 
-    agh = AsciiGrayscaleImageHandler(agt, "input/lena1.png")
+    agt = AsciiGrayscaleTranslator(TRANSLATION_TABLE)
 
-    agh.save_to_file("output/out1.txt", 2)
+    agh = AsciiGrayscaleImageHandler(agt, INPUT_FILE_PATH)
+
+    agh.save_to_file("output/out1.txt", vertical_spacing=3)
 
 
 if __name__ == "__main__":
